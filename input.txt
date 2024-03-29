@@ -1,2 +1,2 @@
-java Main.class "C:\Users\lenovo\Desktop\TuringMachine\example-1.desc" "01001" --animation
-java -jar Turing_Machine.jar "C:\Users\lenovo\Desktop\TuringMachine\example-1.desc" "10101" --animation
+java Main.java "C:\Users\lenovo\Desktop\TuringMachine\example-1.desc" "01001" --animation
+java -jar Turing_Machine.jar "C:\Users\lenovo\Desktop\TuringMachine\example-1.desc" "010101" --animation

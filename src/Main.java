@@ -33,6 +33,7 @@ public class Main {
                 return;
             }
             inputString = args[1];
+            System.out.println(args[1]);
             if (args[2].equals("--animation")) {
                 flag = true;
             } else {
@@ -44,7 +45,7 @@ public class Main {
             }
             myUTM.loadInput(inputString);
         } else if (args.length != 0) {
-            System.out.println("ERROR: The input is not available.[0]: the absolute path of desc file.\n[1]: the input.\n[2]: animation or not.\nEX: java -jar practical4-37847244.jar D:\\Advance\\practical4-37847244\\src\\simple-tm.desc 10101 --animation");
+            System.out.println("ERROR: The input is not available.");
             return;
         }
         if (flag){
@@ -92,14 +93,15 @@ public class Main {
                         if (newState.equals("qa")) {
                             haltState = HaltState.ACCEPTED;
                             myUTM.moveHead(move, flag);
+                            myUTM.writeOnCurrentCell(newSymbol);
+                            myUTM.updateHeadState(currentState);
+                            myUTM.displayHaltState(haltState);
+                            myUTM.repaint();
                         }
                         else if (newState.equals("qr")){
                             haltState = HaltState.REJECTED;
                         }
-                        myUTM.writeOnCurrentCell(newSymbol);
-                        myUTM.updateHeadState(currentState);
-                        myUTM.displayHaltState(haltState);
-                        myUTM.repaint();
+
                     }
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
